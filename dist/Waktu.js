@@ -83,7 +83,7 @@ function () {
       var _this = this;
 
       var templateString = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-      return templateString.match(/\{.+?\}/g).reduce(function (prev, current, index) {
+      return templateString.match(/\{.+?\}/g).reduce(function (prev, current) {
         var fn = current.slice(1, current.length - 1);
         if (_this[fn]) return prev.replace(current, _this[fn]());else return prev;
       }, templateString);
