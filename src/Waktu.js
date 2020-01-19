@@ -1,5 +1,15 @@
 import tambahNol from "./tambahNol";
 
+export const DAY = [
+  "Minggu",
+  "Senin",
+  "Selasa",
+  "Rabu",
+  "Kamis",
+  "Jumat",
+  "Sabtu"
+];
+
 export const MONTH = [
   "Januari",
   "Februari",
@@ -96,6 +106,10 @@ export default class Waktu {
     } else {
       return this.dateObject;
     }
+  }
+
+  hari() {
+    return DAY[this.dateObject.getDay()];
   }
 
   tanggal(fillZero = true) {

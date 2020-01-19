@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.MONTH_SHORT = exports.TIMEZONE_OFFSETS = exports.ZONES = exports.MONTH = void 0;
+exports.default = exports.MONTH_SHORT = exports.TIMEZONE_OFFSETS = exports.ZONES = exports.MONTH = exports.DAY = void 0;
 
 var _tambahNol = _interopRequireDefault(require("./tambahNol"));
 
@@ -17,6 +17,8 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+var DAY = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+exports.DAY = DAY;
 var MONTH = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
 exports.MONTH = MONTH;
 var ZONES = {
@@ -97,6 +99,11 @@ function () {
       } else {
         return this.dateObject;
       }
+    }
+  }, {
+    key: "hari",
+    value: function hari() {
+      return DAY[this.dateObject.getDay()];
     }
   }, {
     key: "tanggal",
